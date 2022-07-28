@@ -15,6 +15,6 @@ $mensaje .= "Enviado el: " . date("d/m/y", time());
 
 mail('jofre.emma@gmail.com', 'Comentario en Find Nature',utf8_decode( $mensaje) );
 
-header('Location: https://findnature.000webhostapp.com/exito.html');
+header('Location: exito.html');
 
 ?>
