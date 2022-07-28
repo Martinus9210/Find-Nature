@@ -1,20 +1,22 @@
-<?php
+<?php  
 
+// Llamando a los campos
 $nombre = $_POST['nombre'];
-$numero = $_POST['celular'];
-$email = $_POST['mail'];
-$caja = $_POST['caja'];
+$correo = $_POST['mail'];
+$telefono = $_POST['celular'];
+$mensaje = $_POST['caja'];
 
+// Datos para el correo
+$destinatario = "jofre.emma92@gmail.com";
+$asunto = "Contacto desde nuestra web";
 
-$mensaje = "Este mensaje fue enviado por " . $nombre . ",\r\n";
-$mensaje .= "Su email es " . $email . ",\r\n";
-$mensaje .= "Su teléfono es " . $numero . ",\r\n";
-$mensaje .= "Mensaje: " . $caja . ",\r\n";
-$mensaje .= "Enviado el: " . date("d/m/y", time());
+$carta = "De: $nombre \n";
+$carta .= "Correo: $correo \n";
+$carta .= "Telefono: $telefono \n";
+$carta .= "Mensaje: $mensaje";
 
-
-mail('jofre.emma@gmail.com', 'Comentario en Find Nature',utf8_decode( $mensaje) );
-
-header('Location: exito.html');
+// Enviando Mensaje
+mail($destinatario, $asunto, $carta);
+header('Location:exito.html');
 
 ?>
